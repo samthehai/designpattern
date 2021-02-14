@@ -3,8 +3,8 @@ package maze_test
 import (
 	"testing"
 
-	"github.com/samthehai/designpattern/creational/abstract_factory/maze"
-	"github.com/samthehai/designpattern/creational/abstract_factory/maze/abstract"
+	"github.com/samthehai/designpattern/creational/abstractfactory/maze"
+	"github.com/samthehai/designpattern/creational/abstractfactory/maze/abstract"
 	"github.com/stretchr/testify/assert"
 )
 

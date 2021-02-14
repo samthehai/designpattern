@@ -1,7 +1,7 @@
 package abstract
 
 import (
-	mazeabstract "github.com/samthehai/designpattern/creational/abstract_factory/maze/abstract"
+	mazeabstract "github.com/samthehai/designpattern/creational/abstractfactory/maze/abstract"
 )
 
 type MazeBuilder interface {

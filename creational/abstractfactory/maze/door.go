@@ -3,7 +3,7 @@ package maze
 import (
 	"log"
 
-	"github.com/samthehai/designpattern/creational/abstract_factory/maze/abstract"
+	"github.com/samthehai/designpattern/creational/abstractfactory/maze/abstract"
 )
 
 type Door struct {

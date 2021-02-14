@@ -1,8 +1,8 @@
 package builder
 
 import (
-	"github.com/samthehai/designpattern/creational/abstract_factory/maze"
-	mazeabstract "github.com/samthehai/designpattern/creational/abstract_factory/maze/abstract"
+	"github.com/samthehai/designpattern/creational/abstractfactory/maze"
+	mazeabstract "github.com/samthehai/designpattern/creational/abstractfactory/maze/abstract"
 )
 
 type StandardMazeBuilder struct {

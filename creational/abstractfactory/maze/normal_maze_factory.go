@@ -1,6 +1,6 @@
 package maze
 
-import "github.com/samthehai/designpattern/creational/abstract_factory/maze/abstract"
+import "github.com/samthehai/designpattern/creational/abstractfactory/maze/abstract"
 
 type NormalMazeFactory struct {
 }

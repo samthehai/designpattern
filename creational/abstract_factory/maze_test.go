@@ -1,16 +1,12 @@
-package main
+package maze_test
 
 import (
-	"github.com/davecgh/go-spew/spew"
+	"testing"
+
 	"github.com/samthehai/designpattern/creational/abstract_factory/maze"
 	"github.com/samthehai/designpattern/creational/abstract_factory/maze/abstract"
+	"github.com/stretchr/testify/assert"
 )
-
-func main() {
-	spew.Dump(createMaze(&maze.NormalMazeFactory{}))
-	spew.Dump(createMaze(&maze.BombedMazeFactory{}))
-	spew.Dump(createMaze(&maze.EnchantedMazeFactory{}))
-}
 
 func createMaze(factory abstract.MazeFactory) abstract.Maze {
 	maze := factory.MakeMaze()
@@ -32,4 +28,35 @@ func createMaze(factory abstract.MazeFactory) abstract.Maze {
 	r2.SetSide(abstract.West, door)
 
 	return maze
+}
+
+func TestCreateMaze(t *testing.T) {
+	type TestCase struct {
+		Name        string
+		MazeFactory abstract.MazeFactory
+	}
+
+	tests := []TestCase{
+		{
+			Name:        "normal maze factory",
+			MazeFactory: &maze.NormalMazeFactory{},
+		},
+		{
+			Name:        "bombed maze factory",
+			MazeFactory: &maze.BombedMazeFactory{},
+		},
+		{
+			Name:        "enchanted maze factory",
+			MazeFactory: &maze.EnchantedMazeFactory{},
+		},
+	}
+
+	for _, tc := range tests {
+		tc := tc // capture range variable
+		t.Run(tc.Name, func(t *testing.T) {
+			t.Parallel()
+			maze := createMaze(tc.MazeFactory)
+			assert.NotNil(t, maze)
+		})
+	}
 }

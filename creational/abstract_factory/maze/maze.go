@@ -16,8 +16,12 @@ func (m *Maze) AddRoom(room abstract.Room) {
 }
 
 func (m *Maze) RoomNo(number int) abstract.Room {
+	if m.rooms == nil {
+		return nil
+	}
+
 	for _, room := range m.rooms {
-		if room.GetRoomNumber() == number {
+		if room != nil && room.GetRoomNumber() == number {
 			return room
 		}
 	}
